@@ -8,7 +8,7 @@ import java.io.ObjectOutputStream;
 
 /**
  * Describe：实体类Copy
- * Created by 吴天强 on 2018/11/5.
+ * Created by 阳光下的影子 on 2018/11/5.
  */
 public class BeanCopyUtils {
 

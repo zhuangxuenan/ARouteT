@@ -13,7 +13,7 @@ import java.util.TimeZone;
 
 /**
  * Describe：日期帮助类
- * Created by 吴天强 on 2018/10/15.
+ * Created by 阳光下的影子 on 2018/10/15.
  */
 @SuppressLint("SimpleDateFormat")
 public class DateUtils {

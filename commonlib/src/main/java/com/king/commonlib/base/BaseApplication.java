@@ -2,7 +2,6 @@ package com.king.commonlib.base;
 
 import android.app.Application;
 import android.content.Context;
-import androidx.multidex.MultiDex;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.king.commonlib.BuildConfig;
@@ -14,6 +13,8 @@ import com.orhanobut.logger.LogcatLogStrategy;
 import com.orhanobut.logger.Logger;
 import com.orhanobut.logger.PrettyFormatStrategy;
 
+import androidx.multidex.MultiDex;
+
 
 /**
  * Describe：基础Application所有需要模块化开发的module都需要继承自BaseApplication
@@ -21,7 +22,7 @@ import com.orhanobut.logger.PrettyFormatStrategy;
  */
 public class BaseApplication extends Application {
     private static BaseApplication application= null;
-    private BaseApplication(){}
+    //private BaseApplication(){}
     public static BaseApplication getslacker() {
         // 为空就new
         if(application== null){

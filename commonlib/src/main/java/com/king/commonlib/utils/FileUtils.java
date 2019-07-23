@@ -17,7 +17,7 @@ import androidx.core.content.FileProvider;
 
 /**
  * Describe：文件帮助类
- * Created by 吴天强 on 2018/10/25.
+ * Created by 阳光下的影子 on 2018/10/25.
  */
 
 public class FileUtils {

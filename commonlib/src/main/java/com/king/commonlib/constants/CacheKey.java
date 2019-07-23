@@ -5,7 +5,7 @@ import com.king.commonlib.base.BaseApplication;
 
 /**
  * Describe：缓存key
- * Created by 吴天强 on 2018/11/13.
+ * Created by 阳光下的影子 on 2018/11/13.
  */
 
 public interface CacheKey {

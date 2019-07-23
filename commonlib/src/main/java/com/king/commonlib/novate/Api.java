@@ -2,7 +2,7 @@ package com.king.commonlib.novate;
 
 /**
  * Describe：接口
- * Created by 吴天强 on 2018/10/17.
+ * Created by 阳光下的影子 on 2018/10/17.
  */
 
 public interface Api {

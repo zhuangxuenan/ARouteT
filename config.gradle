@@ -26,6 +26,9 @@ ext {
             "retrofit-converter-gson": "com.squareup.retrofit2:converter-gson:${android["retrofitSdkVersion"]}",
             "retrofit-adapter-rxjava": "com.squareup.retrofit2:adapter-rxjava:${android["retrofitSdkVersion"]}",
             "converter-scalars"      : "com.squareup.retrofit2:converter-scalars:${android["retrofitSdkVersion"]}",
+            "rxlifecycle"            :'com.trello.rxlifecycle2:rxlifecycle:2.2.1',
+            "rxlifecycle-android"    :'com.trello.rxlifecycle2:rxlifecycle-android:2.2.1',
+            "rxlifecycle-components" :'com.trello.rxlifecycle2:rxlifecycle-components:2.2.1',
             "okhttp3"                : "com.squareup.okhttp3:okhttp:3.14.2",
             "gson"                   : "com.google.code.gson:gson:2.8.2",
 

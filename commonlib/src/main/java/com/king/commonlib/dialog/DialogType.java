@@ -8,7 +8,7 @@ import androidx.annotation.IntDef;
 
 /**
  * Describe：对话框类型
- * Created by 吴天强 on 2018/10/26.
+ * Created by 阳光下的影子 on 2018/10/26.
  */
 
 public interface DialogType {

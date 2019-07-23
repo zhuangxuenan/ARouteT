@@ -18,7 +18,7 @@ import androidx.annotation.NonNull;
 
 /**
  * Describe：glide 加载图片转换器之模糊转换器
- * Created by 吴天强 on 2018/11/8.
+ * Created by 阳光下的影子 on 2018/11/8.
  */
 
 public class BlurTransformation extends BitmapTransformation {

@@ -7,7 +7,7 @@ import com.king.commonlib.base.BaseApplication;
 
 /**
  * Describe：工具类
- * Created by 吴天强 on 2018/10/15.
+ * Created by 阳光下的影子 on 2018/10/15.
  */
 
 public class AppVerson {

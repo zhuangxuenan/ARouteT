@@ -19,7 +19,7 @@ import okhttp3.ResponseBody;
 
 /**
  * Describe：网络返回基类 泛型为必传项 默认 传入String即可
- * Created by 吴天强 on 2017/9/26.
+ * Created by 阳光下的影子 on 2017/9/26.
  */
 @SuppressWarnings("unchecked")
 public abstract class OnResultCallBack<T> extends RxGenericsCallback<T, ResponseBody> {
@@ -39,7 +39,6 @@ public abstract class OnResultCallBack<T> extends RxGenericsCallback<T, Response
             msg = jsonObject.optString(NetConfig.Code.MSG);
             success = jsonObject.optBoolean(NetConfig.Code.SUCCESS);
             dataStr = jsonObject.opt(NetConfig.Code.MODEL).toString();
-
             if (dataStr.charAt(0) == 123) {
                 //获取泛型类型
                 Class<T> classOfT = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
@@ -70,6 +69,7 @@ public abstract class OnResultCallBack<T> extends RxGenericsCallback<T, Response
 
     @Override
     public void onCancel(Object tag, Throwable e) {
+
     }
 
     @Override

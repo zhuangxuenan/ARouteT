@@ -8,7 +8,7 @@ import java.text.DecimalFormat;
 
 /**
  * Describe：金钱工具类
- * Created by 吴天强 on 2017/11/24.
+ * Created by 阳光下的影子 on 2017/11/24.
  */
 
 public class MoneyUtils {

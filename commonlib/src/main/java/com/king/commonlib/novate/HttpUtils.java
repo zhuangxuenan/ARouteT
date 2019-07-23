@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  * Describe：网络请求帮助类
- * Created by 吴天强 on 2017/9/19.
+ * Created by 阳光下的影子 on 2017/9/19.
  */
 
 public class HttpUtils {
@@ -31,16 +31,16 @@ public class HttpUtils {
         builder.addCookie(true); //是否同步cooike 默认不同步
 
         //https配置 xxx.cer放在asset目录下
-//        builder.skipSSLSocketFactory(true);//信任所有证书
+        builder.skipSSLSocketFactory(true);//信任所有证书
 //        builder.addSSLSocketFactory(NovateHttpsFactroy.creatSSLSocketFactory(
 //                BaseApplication.getApplication().getBaseContext(), "xxx.cer"));
 
 //        builder.addHeader(headers); //添加公共请求头
 //        builder.addParameters(parameters);//公共参数
-//        builder.connectTimeout(10);  //连接时间 可以忽略
-//        builder.addCache(true);  //是否缓存 默认缓存
+        builder.connectTimeout(15);  //连接时间 可以忽略
+        builder.addCache(false);  //是否缓存 默认缓存
 //        builder.addCache(cache, cacheTime);   //自定义缓存
-//        builder.addLog(true);//是否开启log
+        builder.addLog(true);//是否开启log
 //        builder.cookieManager(new NovateCookieManager()); // 自定义cooike，可以忽略
 //        builder.addInterceptor(); // 自定义Interceptor
 //        builder.addNetworkInterceptor(); // 自定义NetworkInterceptor

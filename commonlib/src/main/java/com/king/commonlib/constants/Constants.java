@@ -2,7 +2,7 @@ package com.king.commonlib.constants;
 
 /**
  * Describe：常量存放
- * Created by 吴天强 on 2017/10/9.
+ * Created by 阳光下的影子 on 2017/10/9.
  */
 
 public class Constants {

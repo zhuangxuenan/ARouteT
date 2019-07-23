@@ -16,7 +16,7 @@ import java.util.Map;
 
 /**
  * Describe：Activity跳转
- * Created by 吴天强 on 2018/10/22.
+ * Created by 阳光下的影子 on 2018/10/22.
  */
 
 public class ActivityToActivity {

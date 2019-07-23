@@ -6,7 +6,7 @@ import lombok.Setter;
 
 /**
  * Describe：EventBus事件类
- * Created by 吴天强 on 2018/10/22.
+ * Created by 眼光下的影子 on 2018/10/22.
  */
 
 @Getter

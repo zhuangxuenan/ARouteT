@@ -9,7 +9,7 @@ import java.util.Map;
 
 /**
  * Describe：请求参数封装类
- * Created by 吴天强 on 2017/9/19.
+ * Created by 阳光下的影子 on 2017/9/19.
  */
 public class RequestParam {
 

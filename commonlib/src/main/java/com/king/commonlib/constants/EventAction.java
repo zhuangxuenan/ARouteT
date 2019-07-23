@@ -2,7 +2,7 @@ package com.king.commonlib.constants;
 
 /**
  * Describe：EventBus事件
- * Created by 吴天强 on 2018/10/19.
+ * Created by 阳光下的影子 on 2018/10/19.
  */
 
 public interface EventAction {
