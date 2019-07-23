@@ -53,16 +53,6 @@ public abstract class BaseMvpFragment<P extends BasePresenter> extends BaseFragm
             loadingDialog.dismiss();
         }
     }
-
-    @Override
-    public void onEmpty(Object tag) {
-
-    }
-
-    @Override
-    public void onError(Object tag, String errorMsg) {
-
-    }
     //***************************************IBaseView方法实现*************************************
 
     /**

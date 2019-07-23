@@ -15,7 +15,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Retrofit封装
  */
 public class RetrofitUtils {
-    private static final String TAG = "RetrofitUtils";
     private static ApiUrl mApiUrl;
     /**
      * 单例模式
@@ -31,13 +30,11 @@ public class RetrofitUtils {
         return mApiUrl;
     }
     private RetrofitUtils(){}
-
     public ApiUrl getRetrofit() {
         // 初始化Retrofit
         ApiUrl apiUrl = initRetrofit(initOkHttp()).create(ApiUrl.class);
         return apiUrl;
     }
-
     /**
      * 初始化Retrofit
      */
@@ -57,7 +54,6 @@ public class RetrofitUtils {
     @NonNull
     private OkHttpClient initOkHttp() {
         return new OkHttpClient().newBuilder()
-
                     .readTimeout(Constans.DEFAULT_TIME, TimeUnit.SECONDS)//设置读取超时时间
                     .connectTimeout(Constans.DEFAULT_TIME, TimeUnit.SECONDS)//设置请求超时时间
                     .writeTimeout(Constans.DEFAULT_TIME,TimeUnit.SECONDS)//设置写入超时时间

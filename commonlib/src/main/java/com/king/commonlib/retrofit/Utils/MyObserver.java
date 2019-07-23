@@ -11,6 +11,7 @@ import io.reactivex.disposables.Disposable;
 
 /**
  * Observer加入加载框
+ *可以选择加入弹窗的观察者
  * @param <T>
  */
 public abstract class MyObserver<T> extends BaseObserver<T> {
@@ -25,14 +26,14 @@ public abstract class MyObserver<T> extends BaseObserver<T> {
     }
 
     public MyObserver(Context context) {
-        this(context,true);
+        this(context, true);
     }
 
     @Override
     public void onSubscribe(Disposable d) {
         this.d = d;
         if (!isConnected(mContext)) {
-            Toast.makeText(mContext,"未连接网络",Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, "未连接网络", Toast.LENGTH_SHORT).show();
             if (d.isDisposed()) {
                 d.dispose();
             }
@@ -44,6 +45,7 @@ public abstract class MyObserver<T> extends BaseObserver<T> {
             }
         }
     }
+
     @Override
     public void onError(Throwable e) {
         if (d.isDisposed()) {
@@ -68,17 +70,17 @@ public abstract class MyObserver<T> extends BaseObserver<T> {
             dialog.dismiss();
         dialog = null;
     }
+
     /**
      * 是否有网络连接，不管是wifi还是数据流量
+     *
      * @param context
      * @return
      */
-    public static boolean isConnected(Context context)
-    {
+    public static boolean isConnected(Context context) {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo info = cm.getActiveNetworkInfo();
-        if (info == null)
-        {
+        if (info == null) {
             return false;
         }
         boolean available = info.isAvailable();
