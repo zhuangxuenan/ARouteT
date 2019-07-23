@@ -1,7 +1,9 @@
 package com.king.aroutet.mvp_contract;
 
 import com.king.commonlib.base.mvp.BasePresenter;
+import com.king.commonlib.listener.AppInterface;
 import com.king.commonlib.novate.callback.OnResultCallBack;
+import com.king.commonlib.retrofit.bean.Article;
 
 /**
  * Describe：首页Presenter
@@ -23,21 +25,8 @@ public class MainPresenter extends BasePresenter<MainContract.Model, MainContrac
 
     @Override
     public void checkList() {
-        getModule().getarticleList(new OnResultCallBack<String>() {
-            @Override
-            public void onSuccess(boolean success, int code, String msg, Object tag, String response) {
-                getView().list_article(response);
-            }
-
-            @Override
-            public void onFailure(Object tag, Exception e) {
-
-            }
-
-            @Override
-            public void onCompleted() {
-
-            }
+        getModule().getarticleList(params -> {
+            getView().list_article(params);
         });
     }
 }

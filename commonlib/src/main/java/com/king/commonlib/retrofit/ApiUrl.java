@@ -1,5 +1,6 @@
 package com.king.commonlib.retrofit;
 
+import com.king.commonlib.retrofit.Utils.BaseResponse;
 import com.king.commonlib.retrofit.bean.Article;
 
 import io.reactivex.Observable;
@@ -14,7 +15,7 @@ public interface ApiUrl {
      */
     @Headers("Accept:application/json")
     @GET("article/list/{page}/json")
-    Observable<Article> article_list(@Path("page")int page);
+    Observable<BaseResponse<Article>>article_list(@Path("page")int page);
 
     @Headers("Accept:application/json")
     @GET("banner/text")

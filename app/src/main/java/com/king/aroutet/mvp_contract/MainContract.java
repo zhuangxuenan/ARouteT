@@ -2,7 +2,9 @@ package com.king.aroutet.mvp_contract;
 
 import com.king.commonlib.base.mvp.IBaseModel;
 import com.king.commonlib.base.mvp.IBaseView;
+import com.king.commonlib.listener.AppInterface;
 import com.king.commonlib.novate.callback.OnResultCallBack;
+import com.king.commonlib.retrofit.bean.Article;
 
 /**
  * Describe：契约类
@@ -14,9 +16,9 @@ public interface MainContract {
         /**
          * 检查更新
          *
-         * @param callback 回调函数
+         * @param appInterface 回调函数
          */
-        void getarticleList(OnResultCallBack callback);
+        void getarticleList(AppInterface<Article> appInterface);
     }
     interface View extends IBaseView {
         /**
@@ -24,7 +26,7 @@ public interface MainContract {
          *
          * @param appInfo appInfo
          */
-        void list_article(String appInfo);
+        void list_article(Article appInfo);
     }
 
     interface Presenter {

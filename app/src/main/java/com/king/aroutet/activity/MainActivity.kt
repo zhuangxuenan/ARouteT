@@ -7,6 +7,7 @@ import com.king.aroutet.R
 import com.king.aroutet.mvp_contract.MainContract
 import com.king.aroutet.mvp_contract.MainPresenter
 import com.king.commonlib.base.BaseMvpActivity
+import com.king.commonlib.retrofit.bean.Article
 
 /***
  *项目名称：ARouteT
@@ -49,7 +50,7 @@ class MainActivity:BaseMvpActivity<MainPresenter>(), MainContract.View{
 
     }
 
-    override fun list_article(appInfo: String?) {
+    override fun list_article(appInfo: Article?) {
 
     }
 
