@@ -10,6 +10,6 @@ import com.king.commonlib.novate.callback.OnResultCallBack;
 public class MainModel implements MainContract.Model {
     @Override
     public void getarticleList(OnResultCallBack callback) {
-
+        //通过网络请求获取结果通过mainPresenter来传递给mainview
     }
 }

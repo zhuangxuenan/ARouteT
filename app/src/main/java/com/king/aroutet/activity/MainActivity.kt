@@ -3,6 +3,7 @@ package com.king.aroutet.activity
 import android.content.Context
 import android.os.Bundle
 import android.view.View
+import com.king.aroutet.R
 import com.king.aroutet.mvp_contract.MainContract
 import com.king.aroutet.mvp_contract.MainPresenter
 import com.king.commonlib.base.BaseMvpActivity
@@ -16,39 +17,40 @@ import com.king.commonlib.base.BaseMvpActivity
  */
 class MainActivity:BaseMvpActivity<MainPresenter>(), MainContract.View{
     override fun destroy() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
     override fun resume() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
     override fun pause() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
     override fun limitOnClick(v: View?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
     override fun bindLayout(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return R.layout.activity_main
     }
 
     override fun createPresenter(): MainPresenter {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return MainPresenter()
     }
 
     override fun initView(view: View?, savedInstanceState: Bundle?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        presenter.start()
+        presenter.checkList()
     }
 
     override fun doBusiness(mContext: Context?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
     override fun list_article(appInfo: String?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
 }
