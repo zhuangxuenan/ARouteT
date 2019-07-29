@@ -224,7 +224,7 @@ public class Test {
         /**
          *BackpressureStrategy.BUFFER 大水缸
          *BackpressureStrategy.ERROR  128的水缸
-         *BackpressureStrategy.DROP   直接把存不下的事件丢弃
+         *BackpressureStrategy.DROP   直接把消费不了的事件丢弃
          *BackpressureStrategy.LATEST 就是只保留最新的事件
          */
         //链式调用
