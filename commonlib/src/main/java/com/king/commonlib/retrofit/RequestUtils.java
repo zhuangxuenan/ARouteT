@@ -6,11 +6,6 @@ import com.king.commonlib.retrofit.Utils.MyObserver;
 import com.king.commonlib.retrofit.Utils.RetrofitUtils;
 import com.king.commonlib.retrofit.Utils.RxHelper;
 import com.king.commonlib.retrofit.bean.Article;
-import com.trello.rxlifecycle2.components.RxActivity;
-
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 
 /**
  * https://www.jianshu.com/p/f23be7f8cb93
