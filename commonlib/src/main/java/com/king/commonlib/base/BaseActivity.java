@@ -19,7 +19,6 @@ import com.king.commonlib.manage.ActivityManage;
 import com.king.commonlib.utils.AppLogMessageMgr;
 import com.king.commonlib.utils.EventBusUtils;
 import com.king.commonlib.utils.NetworkUtil;
-import com.orhanobut.logger.Logger;
 
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -113,7 +112,7 @@ public abstract class BaseActivity extends AppCompatActivity implements IBaseAct
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        Logger.e("permissions:" + Arrays.toString(permissions) + " grantResults:" + Arrays.toString(grantResults));
+        AppLogMessageMgr.e("permissions:" + Arrays.toString(permissions) + " grantResults:" + Arrays.toString(grantResults));
         //如果有未授权权限则跳转设置页面
         if (!requestPermissionsResult(grantResults)) {
             Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);

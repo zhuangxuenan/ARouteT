@@ -9,10 +9,10 @@ import android.os.Build;
 import android.os.Environment;
 
 import com.king.commonlib.base.BaseApplication;
+import com.king.commonlib.utils.AppLogMessageMgr;
 import com.king.commonlib.utils.DateUtils;
 import com.king.commonlib.utils.FileUtils;
 import com.king.commonlib.utils.ZipUtils;
-import com.orhanobut.logger.Logger;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -116,7 +116,7 @@ public class CrashHandlerManage implements UncaughtExceptionHandler {
             }
         } catch (NameNotFoundException e) {
             e.printStackTrace();
-            Logger.e("获取设置信息失败");
+            AppLogMessageMgr.e("获取设置信息失败");
         }
 
         Field[] fields = Build.class.getDeclaredFields();// 反射机制
@@ -124,7 +124,7 @@ public class CrashHandlerManage implements UncaughtExceptionHandler {
             try {
                 field.setAccessible(true);
                 info.put(field.getName(), field.get("").toString());
-                Logger.e(field.getName() + ":" + field.get(""));
+                AppLogMessageMgr.e(field.getName() + ":" + field.get(""));
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }

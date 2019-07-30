@@ -65,7 +65,6 @@ dependencies {
 
     //Arouter路由
     api rootProject.ext.dependencies["arouter-api"]
-
     //跨组件通信
     api rootProject.ext.dependencies["arouter_annotation"]
     annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
@@ -122,9 +121,9 @@ dependencies {
     //第三方adapter
     api rootProject.ext.dependencies["superAdapter"]
 
-    //基于Retrofit和RxJava打造的链式网络库
-    api rootProject.ext.dependencies["novate"]
-    api rootProject.ext.dependencies["logger_l"]
+    //基于Retrofit和RxJava打造的链式网络库 暂时不用了
+    //api rootProject.ext.dependencies["novate"]
+    //api rootProject.ext.dependencies["logger_l"]
 
     //沉浸式
     api rootProject.ext.dependencies["immersionbar"]

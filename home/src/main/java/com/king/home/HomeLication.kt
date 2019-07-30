@@ -1,4 +1,4 @@
-package com.king.aroutet
+package com.king.home
 
 import com.king.commonlib.base.BaseApplication
 
@@ -9,11 +9,11 @@ import com.king.commonlib.base.BaseApplication
  *创建时间：2019/7/30 9:11
  *修改人：Android
  */
-class AppLication : BaseApplication() {
+class HomeLication : BaseApplication() {
     //kotlin单例实现
     companion object {
-        val instance: AppLication by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
-            AppLication()
+        val instance: HomeLication by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
+            HomeLication()
         }
     }
 }

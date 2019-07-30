@@ -1,6 +1,6 @@
 package com.king.commonlib.utils.encryption;
 
-import com.orhanobut.logger.Logger;
+import com.king.commonlib.utils.AppLogMessageMgr;
 
 import java.io.UnsupportedEncodingException;
 import java.security.Key;
@@ -31,7 +31,7 @@ public class EncryptUtil {
 		try {
 			tmpBytes = key.getBytes("UTF-8");
 		} catch (UnsupportedEncodingException e) {
-			Logger.e("不支持的字符集");
+			AppLogMessageMgr.e("不支持的字符集");
 			return null;
 		}
 		byte[] keyBytes = new byte[8];
@@ -46,7 +46,7 @@ public class EncryptUtil {
 			byte[] output = cipher.doFinal(content.getBytes("UTF-8"));
 			return ConvertUtil.bytesToHexString(output);
 		} catch (Exception e) {
-			Logger.e("DES加密失败");
+			AppLogMessageMgr.e("DES加密失败");
 		}
 		return null;
 	}
@@ -67,7 +67,7 @@ public class EncryptUtil {
 		try {
 			tmpBytes = key.getBytes("UTF-8");
 		} catch (UnsupportedEncodingException e) {
-			Logger.e("不支持的字符集");
+			AppLogMessageMgr.e("不支持的字符集");
 			return null;
 		}
 		byte[] keyBytes = new byte[8];
@@ -82,7 +82,7 @@ public class EncryptUtil {
 			byte[] output = cipher.doFinal(ConvertUtil.hexStringToBytes(cipherText));
 			return new String(output, "UTF-8");
 		} catch (Exception e) {
-			Logger.e("DES解密失败");
+			AppLogMessageMgr.e("DES解密失败");
 		}
 		return null;
 	}

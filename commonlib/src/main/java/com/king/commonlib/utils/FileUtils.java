@@ -6,7 +6,6 @@ import android.os.Build;
 import android.os.Environment;
 
 import com.king.commonlib.base.BaseApplication;
-import com.orhanobut.logger.Logger;
 
 import java.io.File;
 import java.util.Collections;
@@ -52,7 +51,7 @@ public class FileUtils {
 
     private static File create(String path) {
         if (!isExistExternalStore()) {
-            Logger.e("储存卡已拔出");
+            AppLogMessageMgr.e("储存卡已拔出");
             return null;
         }
         File directory = new File(path);

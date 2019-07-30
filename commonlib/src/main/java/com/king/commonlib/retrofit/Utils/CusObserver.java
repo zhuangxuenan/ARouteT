@@ -14,18 +14,18 @@ import io.reactivex.disposables.Disposable;
  *可以选择加入弹窗的观察者
  * @param <T>
  */
-public abstract class MyObserver<T> extends BaseObserver<T> {
+public abstract class CusObserver<T> extends BaseObserver<T> {
     private boolean mShowDialog;
     private ProgressDialog dialog;
     private Context mContext;
     private Disposable d;
 
-    public MyObserver(Context context, Boolean showDialog) {
+    public CusObserver(Context context, Boolean showDialog) {
         mContext = context;
         mShowDialog = showDialog;
     }
 
-    public MyObserver(Context context) {
+    public CusObserver(Context context) {
         this(context, true);
     }
 
