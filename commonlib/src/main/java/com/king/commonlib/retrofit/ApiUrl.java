@@ -7,7 +7,7 @@ import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 
-//如果参数是请求体 可以通过body注解 传入一个对象或者map 然后将其转成json
+//如果参数是请求体 可以通过@Body注解 传入一个对象或者map 然后将其转成json
 //RequestBody body = RequestBody.create(MediaType.parse("application/x-www-form-urlencoded;charset=utf-8"), "json字符串");
 //RequestBody body = RequestBody.create(MediaType.parse("application/json;charset=utf-8"), bodyStr);
 //RequestBody body = RequestBody.create(MediaType.parse("application/text;charset=utf-8"), "加密串");
