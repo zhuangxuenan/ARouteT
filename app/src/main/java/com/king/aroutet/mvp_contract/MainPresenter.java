@@ -1,9 +1,6 @@
 package com.king.aroutet.mvp_contract;
 
 import com.king.commonlib.base.mvp.BasePresenter;
-import com.king.commonlib.listener.AppInterface;
-import com.king.commonlib.novate.callback.OnResultCallBack;
-import com.king.commonlib.retrofit.bean.Article;
 
 /**
  * Describe：首页Presenter
