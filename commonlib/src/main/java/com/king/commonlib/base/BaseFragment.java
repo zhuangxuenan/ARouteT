@@ -14,6 +14,7 @@ import com.king.commonlib.listener.IBaseFragment;
 import com.king.commonlib.listener.IMemoryState;
 import com.king.commonlib.utils.AppLogMessageMgr;
 import com.king.commonlib.utils.NetworkUtil;
+import com.trello.rxlifecycle2.components.support.RxFragment;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -33,7 +34,7 @@ import butterknife.Unbinder;
  * Created by 阳光下的影子 on 2018/10/17.
  */
 
-public abstract class BaseFragment extends Fragment implements IBaseFragment,IMemoryState,View.OnClickListener {
+public abstract class BaseFragment extends RxFragment implements IBaseFragment,IMemoryState,View.OnClickListener {
     /**
      * 当前Fragment渲染的视图View
      **/

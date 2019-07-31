@@ -296,9 +296,9 @@ public class Test {
         //https://www.jianshu.com/p/1922bd75ee73
         //和Observable功能几乎一模一样，★★背压策略，一定要在线程变换之前去调用★★
         //区别在于：
-        //        1.定义的类功能不一样
-        //        2.Flowable可以通过Subscription对象，调用request(n)，响应式拉取数据，来支持背压特性
-        //        3.★★背压策略，一定要在线程变换之前去调用★★
+        //1.定义的类功能不一样
+        //2.Flowable可以通过Subscription对象，调用request(n)，响应式拉取数据，来支持背压特性
+        //3.★★背压策略，一定要在线程变换之前去调用★★
         //io.reactivex.Flowable
         //基本都使用他
         //io.reactivex.Observable

@@ -19,6 +19,7 @@ import com.king.commonlib.manage.ActivityManage;
 import com.king.commonlib.utils.AppLogMessageMgr;
 import com.king.commonlib.utils.EventBusUtils;
 import com.king.commonlib.utils.NetworkUtil;
+import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -28,7 +29,6 @@ import java.util.Calendar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
@@ -37,7 +37,7 @@ import butterknife.Unbinder;
  * Created by 阳光下的影子 on 2018/10/15.
  */
 
-public abstract class BaseActivity extends AppCompatActivity implements IBaseActivity,View.OnClickListener {
+public abstract class BaseActivity extends RxAppCompatActivity implements IBaseActivity,View.OnClickListener {
     private Unbinder unbinder;
     protected Context mContext;
     protected ImmersionBar mImmersionBar;
