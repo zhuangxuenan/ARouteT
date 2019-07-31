@@ -3,12 +3,14 @@ package com.king.aroutet.activity
 import android.content.Context
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
 import com.kaopiz.kprogresshud.KProgressHUD
 import com.king.aroutet.R
 import com.king.aroutet.mvp_contract.MainContract
 import com.king.aroutet.mvp_contract.MainPresenter
 import com.king.commonlib.base.BaseMvpActivity
 import com.king.commonlib.retrofit.bean.Article
+import com.king.commonlib.utils.PxUtils
 import kotlinx.android.synthetic.main.activity_main.*
 
 /***
@@ -40,7 +42,11 @@ class MainActivity:BaseMvpActivity<MainPresenter>(), MainContract.View{
                         //.setDetailsLabel("Downloading data")
                         .setCancellable(true)
                         .setAnimationSpeed(2)
-                        .setDimAmount(0.5f)
+                        //.setCornerRadius(5f)//圆角
+                        //.setGraceTime(1000)//延迟时间
+                        .setSize(PxUtils.dp2px(this,100f),PxUtils.dp2px(this,100f))//宽高
+                        .setBackgroundColor(ContextCompat.getColor(this,R.color.colorPrimary))//设置背景
+                        .setDimAmount(0.4f)//透明度
                         .show()
             }
         }

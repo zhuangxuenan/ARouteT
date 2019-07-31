@@ -56,18 +56,18 @@ public abstract class BaseMvpActivity<P extends BasePresenter> extends BaseActiv
     }
 
     public void showLoading(String msg) {
-        if (loadingDialog != null && !loadingDialog.isShowing()) {
+        if(null!=hud&&!hud.isShowing()){
             if (!TextUtils.isEmpty(msg)) {
-                loadingDialog.setTitleText(msg);
+                hud.setLabel(msg);
             }
-            loadingDialog.show();
+            hud.show();
         }
     }
 
     @Override
     public void dismissLoading() {
-        if (loadingDialog != null && loadingDialog.isShowing()) {
-            loadingDialog.dismiss();
+        if(null!=hud&&hud.isShowing()){
+            hud.dismiss();
         }
     }
     @Override

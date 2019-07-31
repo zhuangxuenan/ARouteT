@@ -93,7 +93,7 @@ public class Other extends AppCompatActivity implements View.OnClickListener {
             case R.id.grace_indeterminate:
                 hud = KProgressHUD.create(this)
                         .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
-                        .setGraceTime(1000);
+                        .setGraceTime(1000);//延时1秒
                 scheduleDismiss();
                 break;
             case R.id.determinate:

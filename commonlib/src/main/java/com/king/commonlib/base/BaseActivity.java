@@ -10,15 +10,16 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
 import com.gyf.immersionbar.ImmersionBar;
+import com.kaopiz.kprogresshud.KProgressHUD;
 import com.king.commonlib.R;
 import com.king.commonlib.bean.Event;
-import com.king.commonlib.dialog.LoadingDialog;
 import com.king.commonlib.listener.IBaseActivity;
 import com.king.commonlib.listener.IMemoryState;
 import com.king.commonlib.manage.ActivityManage;
 import com.king.commonlib.utils.AppLogMessageMgr;
 import com.king.commonlib.utils.EventBusUtils;
 import com.king.commonlib.utils.NetworkUtil;
+import com.king.commonlib.utils.PxUtils;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
 import org.greenrobot.eventbus.Subscribe;
@@ -29,6 +30,7 @@ import java.util.Calendar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
@@ -41,11 +43,11 @@ public abstract class BaseActivity extends RxAppCompatActivity implements IBaseA
     private Unbinder unbinder;
     protected Context mContext;
     protected ImmersionBar mImmersionBar;
-    protected LoadingDialog loadingDialog;
     private IMemoryState mIMemoryState;
     protected final String TAG = this.getClass().getSimpleName();
     public static final int MIN_CLICK_DELAY_TIME = 1000;
     private long lastClickTime = 0;
+    protected KProgressHUD hud;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         AppLogMessageMgr.e(TAG);
@@ -61,7 +63,19 @@ public abstract class BaseActivity extends RxAppCompatActivity implements IBaseA
         if (regEvent()) {
             EventBusUtils.register(this);
         }
-        loadingDialog = new LoadingDialog(mContext);
+        hud = KProgressHUD.create(this)
+                .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+                //.setLabel("Please wait")
+                //.setDetailsLabel("Downloading data")
+                .setCancellable(true)
+                .setAnimationSpeed(2)
+                //.setAutoDismiss(true)//是否自动消失
+                //.setCornerRadius(5f)//圆角
+                //.setGraceTime(1000)//延迟时间
+                .setSize(PxUtils.dp2px(this,100f),PxUtils.dp2px(this,100f))//宽高
+                .setBackgroundColor(ContextCompat.getColor(this,R.color.colorPrimary))//设置背景
+                .setDimAmount(0.4f);//透明度
+
         initView(getWindow().getDecorView(),savedInstanceState);
         doBusiness(this);
     }
@@ -104,6 +118,12 @@ public abstract class BaseActivity extends RxAppCompatActivity implements IBaseA
         destroy();
         if (regEvent()) {
             EventBusUtils.unregister(this);
+        }
+        if(null!=hud){
+            if(hud.isShowing()){
+                hud.dismiss();
+            }
+            hud = null;
         }
         //将Activity从管理器移除
         ActivityManage.getslacker().removeActivity(this);
@@ -150,6 +170,11 @@ public abstract class BaseActivity extends RxAppCompatActivity implements IBaseA
     protected void onPause() {
         super.onPause();
         hideSoftInput();
+        if(null!=hud){
+            if(hud.isShowing()){
+                hud.dismiss();
+            }
+        }
         pause();
     }
     //强制隐藏输入法
