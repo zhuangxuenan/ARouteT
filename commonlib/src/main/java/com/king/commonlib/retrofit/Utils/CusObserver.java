@@ -1,12 +1,16 @@
 package com.king.commonlib.retrofit.Utils;
 
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.widget.Toast;
 
+import com.kaopiz.kprogresshud.KProgressHUD;
+import com.king.commonlib.R;
+import com.king.commonlib.utils.PxUtils;
+
+import androidx.core.content.ContextCompat;
 import io.reactivex.disposables.Disposable;
 
 /**
@@ -16,10 +20,9 @@ import io.reactivex.disposables.Disposable;
  */
 public abstract class CusObserver<T> extends BaseObserver<T> {
     private boolean mShowDialog;
-    private ProgressDialog dialog;
+    protected KProgressHUD hud;
     private Context mContext;
     private Disposable d;
-
     public CusObserver(Context context, Boolean showDialog) {
         mContext = context;
         mShowDialog = showDialog;
@@ -38,10 +41,17 @@ public abstract class CusObserver<T> extends BaseObserver<T> {
                 d.dispose();
             }
         } else {
-            if (dialog == null && mShowDialog == true) {
-                dialog = new ProgressDialog(mContext);
-                dialog.setMessage("正在加载中");
-                dialog.show();
+            if(mShowDialog){
+                if(null==hud){
+                    hud = KProgressHUD.create(mContext)
+                            .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+                            .setCancellable(true)
+                            .setAnimationSpeed(2)
+                            .setSize(PxUtils.dp2px(mContext,100f),PxUtils.dp2px(mContext,100f))//宽高
+                            .setBackgroundColor(ContextCompat.getColor(mContext,R.color.colorPrimary))//设置背景
+                            .setDimAmount(0.4f);//透明度
+                }
+                hud.setLabel("正在加载中").show();
             }
         }
     }
@@ -66,9 +76,12 @@ public abstract class CusObserver<T> extends BaseObserver<T> {
 
 
     public void hidDialog() {
-        if (dialog != null && mShowDialog == true)
-            dialog.dismiss();
-        dialog = null;
+        if(null!=hud&&mShowDialog==true){
+            if(hud.isShowing()){
+                hud.dismiss();
+            }
+            hud = null;
+        }
     }
 
     /**
