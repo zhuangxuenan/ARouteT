@@ -9,7 +9,6 @@ import com.king.commonlib.base.mvp.BasePresenter;
 
 public class MainPresenter extends BasePresenter<MainContract.Model, MainContract.View> implements MainContract.Presenter {
 
-
     @Override
     protected MainModel createModule() {
         return new MainModel();
@@ -19,7 +18,6 @@ public class MainPresenter extends BasePresenter<MainContract.Model, MainContrac
     public void start() {
 
     }
-
     @Override
     public void checkList() {
         getModule().getarticleList(params -> {

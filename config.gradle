@@ -24,7 +24,7 @@ ext {
             //网络框架
             "retrofit"               : "com.squareup.retrofit2:retrofit:${android["retrofitSdkVersion"]}",
             "retrofit-converter-gson": "com.squareup.retrofit2:converter-gson:${android["retrofitSdkVersion"]}",
-            "retrofit-adapter-rxjava": "com.squareup.retrofit2:adapter-rxjava:${android["retrofitSdkVersion"]}",
+            "retrofit-adapter-rxjava2": "com.squareup.retrofit2:adapter-rxjava2:${android["retrofitSdkVersion"]}",
             "converter-scalars"      : "com.squareup.retrofit2:converter-scalars:${android["retrofitSdkVersion"]}",
             "rxlifecycle"            :'com.trello.rxlifecycle2:rxlifecycle:2.2.1',
             "rxlifecycle-android"    :'com.trello.rxlifecycle2:rxlifecycle-android:2.2.1',
@@ -76,10 +76,6 @@ ext {
             "brvah"                  : 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30',//一个牛逼的第三方adapter
             "superAdapter"           : 'org.byteam.superadapter:superadapter:3.6.8', //万能Adapter
             "eventbus"               : 'org.greenrobot:eventbus:3.0.0',//事件总线
-
-            "novate"                 : 'com.tamic.novate:novate:1.5.5',//基于Retrofit和RxJava打造的链式网络库
-            //日志
-            "logger_l"              : "com.orhanobut:logger:2.2.0",
             //沉浸式状态栏
             // 基础依赖包，必须要依赖
             "immersionbar"           : 'com.gyf.immersionbar:immersionbar:3.0.0-beta05',

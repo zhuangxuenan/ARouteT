@@ -3,11 +3,13 @@ package com.king.aroutet.activity
 import android.content.Context
 import android.os.Bundle
 import android.view.View
+import com.kaopiz.kprogresshud.KProgressHUD
 import com.king.aroutet.R
 import com.king.aroutet.mvp_contract.MainContract
 import com.king.aroutet.mvp_contract.MainPresenter
 import com.king.commonlib.base.BaseMvpActivity
 import com.king.commonlib.retrofit.bean.Article
+import kotlinx.android.synthetic.main.activity_main.*
 
 /***
  *项目名称：ARouteT
@@ -30,7 +32,18 @@ class MainActivity:BaseMvpActivity<MainPresenter>(), MainContract.View{
     }
 
     override fun limitOnClick(v: View?) {
-
+        when(v?.id){
+            R.id.kprogresshud->{
+                KProgressHUD.create(this)
+                        .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+                        //.setLabel("Please wait")
+                        //.setDetailsLabel("Downloading data")
+                        .setCancellable(true)
+                        .setAnimationSpeed(2)
+                        .setDimAmount(0.5f)
+                        .show()
+            }
+        }
     }
 
     override fun bindLayout(): Int {
@@ -47,11 +60,10 @@ class MainActivity:BaseMvpActivity<MainPresenter>(), MainContract.View{
     }
 
     override fun doBusiness(mContext: Context?) {
-
+        kprogresshud.setOnClickListener(this)
     }
 
     override fun list_article(appInfo: Article?) {
-
+        //showLoading()
     }
-
 }

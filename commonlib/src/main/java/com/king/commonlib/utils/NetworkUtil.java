@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-import retrofit2.adapter.rxjava.HttpException;
+
 
 public class NetworkUtil {
 
