@@ -17,9 +17,9 @@ public class RequestUtils {
      * @param context
      * @param observer
      */
-    public static void getarticle(Context context, CusObserver<Article> observer){
+    public static void getarticle(int page,Context context, CusObserver<Article> observer){
         RetrofitUtils.getApiUrl()
-                .article_list(0)
+                .article_list(page)
                 .compose(RxHelper.observableIO2Main(context))
                 .subscribe(observer);
     }

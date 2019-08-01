@@ -4,6 +4,9 @@ import com.king.commonlib.retrofit.Utils.BaseResponse;
 import com.king.commonlib.retrofit.bean.Article;
 
 import io.reactivex.Observable;
+import retrofit2.Call;
+import retrofit2.Response;
+import retrofit2.adapter.rxjava2.Result;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 
@@ -75,13 +78,32 @@ import retrofit2.http.Path;
  * i.@Streaming 表示返回的数据以流的形式返回，适用于返回数据较大的场景，
  * 如果没有使用该注解，默认把数据全部载入内存，之后获取数据也是从内存中获取的，文件过大会造成内存溢出
  * https://blog.csdn.net/impure/article/details/79658098
+ *
+ * Query、Field和Part这三者都支持数组和实现了Iterable接口的类型，如List，Set等，方便向后台传递数组。
+ * retrofit介绍：
+ * https://www.cnblogs.com/baiqiantao/p/7494850.html
+ *
+ * 用Observable<retrofit2.Response<T>>代替 Observable<T>
+ * 用Observable<retrofit2.adapter.rxjava.Result<T>>代替 Observable<T>，这个Result中包含了Response的实例
  */
 
 public interface ApiUrl {
     /**首页文章列表
      *get请求，不带参数
      */
-    //@Headers("Accept:application/json")
     @GET("article/list/{page}/json")
     Observable<BaseResponse<Article>>article_list(@Path("page")int page);
+
+    @GET("article/list/{page}/json")
+    Call<Article>article_list2(@Path("page")int page);
+
+    //如果返回值封装成Result<Article>在onResponse中能够拿到Article和headrs等信息
+    @GET("article/list/{page}/json")
+    Call<Article>article_list3(@Path("page")int page);
+
+    @GET("article/list/{page}/json")
+    Observable<Result<Article>>article_list4(@Path("page")int page);
+
+    @GET("article/list/{page}/json")
+    Observable<Response<Article>>article_list5(@Path("page")int page);
 }

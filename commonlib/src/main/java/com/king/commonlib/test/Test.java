@@ -35,6 +35,7 @@ import io.reactivex.schedulers.Schedulers;
  */
 
 /**
+ * rxjava 观察者模式 响应式拉取
  * 相关博客
  * https://www.jianshu.com/p/cd3557b1a474
  * 该系列有十篇
