@@ -54,7 +54,7 @@ ext {
             "Android-AdvancedWebView": "com.github.delight-im:Android-AdvancedWebView:v3.0.0",//一个第三方webview
             "banner"                 : 'com.youth.banner:banner:1.4.10',//banner图
             "MagicIndicator"         : 'com.github.hackware1993:MagicIndicator:1.5.0',//一个tab导航栏
-            "logger"                 : 'com.squareup.okhttp3:logging-interceptor:3.9.0',//拦截器
+            "logger"                 : 'com.squareup.okhttp3:logging-interceptor:3.14.2',//拦截器
 
             "PersistentCookieJar"    : 'com.github.franmontiel:PersistentCookieJar:v1.0.1',//用于持久化cookie工具
             "carrousellayout"        : 'com.dalong:carrousellayout:1.0.0',//类似旋转木马的效果图

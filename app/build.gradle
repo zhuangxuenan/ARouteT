@@ -70,6 +70,8 @@ dependencies {
     annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
     //黄油刀
     annotationProcessor rootProject.ext.dependencies["butterknife-apt"]
+    annotationProcessor rootProject.ext.dependencies["dagger2-apt-compiler"]
+    annotationProcessor rootProject.ext.dependencies["glide_annotation"]
     if (isNeedHomeModule.toBoolean()) {
         implementation project(':home')
     }
