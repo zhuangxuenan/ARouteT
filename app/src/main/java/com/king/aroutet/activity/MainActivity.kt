@@ -32,7 +32,6 @@ class MainActivity:BaseMvpActivity<MainPresenter>(), MainContract.View{
     override fun pause() {
 
     }
-
     override fun limitOnClick(v: View?) {
         when(v?.id){
             R.id.kprogresshud->{
