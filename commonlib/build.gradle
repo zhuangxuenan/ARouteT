@@ -85,8 +85,8 @@ dependencies {
     api rootProject.ext.dependencies["retrofit-adapter-rxjava2"]
     api rootProject.ext.dependencies["converter-scalars"]
 
-    api rootProject.ext.dependencies["rxlifecycle"]
-    api rootProject.ext.dependencies["rxlifecycle-android"]
+    //api rootProject.ext.dependencies["rxlifecycle"]
+    //api rootProject.ext.dependencies["rxlifecycle-android"]
     api rootProject.ext.dependencies["rxlifecycle-components"]
     api rootProject.ext.dependencies["annotations"]
 

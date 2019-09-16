@@ -9,7 +9,7 @@ ext {
                androidSupportSdkVersion: "28.0.0",
                retrofitSdkVersion      : "2.6.0",
                dagger2SdkVersion       : "2.23.2",
-               rxlifecycleSdkVersion   : "0.6.1",
+               rxlifecycleSdkVersion   : "2.2.1",
                espressoSdkVersion      : "2.2.2"
     ]
     dependencies = [
@@ -26,9 +26,9 @@ ext {
             "retrofit-converter-gson": "com.squareup.retrofit2:converter-gson:${android["retrofitSdkVersion"]}",
             "retrofit-adapter-rxjava2": "com.squareup.retrofit2:adapter-rxjava2:${android["retrofitSdkVersion"]}",
             "converter-scalars"      : "com.squareup.retrofit2:converter-scalars:${android["retrofitSdkVersion"]}",
-            "rxlifecycle"            :'com.trello.rxlifecycle2:rxlifecycle:2.2.1',
-            "rxlifecycle-android"    :'com.trello.rxlifecycle2:rxlifecycle-android:2.2.1',
-            "rxlifecycle-components" :'com.trello.rxlifecycle2:rxlifecycle-components:2.2.1',
+            "rxlifecycle"            :'com.trello.rxlifecycle2:rxlifecycle:2.2.2',//基础库
+            "rxlifecycle-android"    :'com.trello.rxlifecycle2:rxlifecycle-android:2.2.2',//Android中使用的库，内部引用了基础库，如果使用此库则无需再引用基础库
+            "rxlifecycle-components" :'com.trello.rxlifecycle2:rxlifecycle-components:2.2.2',//Android组件库，里面定义了例如RxActivity、RxFragment等Android组件，内部引用了基础库和Android库，如果使用此库则无需再重复引用
             "okhttp3"                : "com.squareup.okhttp3:okhttp:3.14.2",
             "gson"                   : "com.google.code.gson:gson:2.8.2",
 
