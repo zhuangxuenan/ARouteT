@@ -9,7 +9,7 @@ ext {
                androidSupportSdkVersion: "29.0.3",
                retrofitSdkVersion      : "2.6.0",
                dagger2SdkVersion       : "2.23.2",
-               rxlifecycleSdkVersion   : "0.6.1",
+               rxlifecycleSdkVersion   : "2.2.1",
                espressoSdkVersion      : "2.2.2"
     ]
     dependencies = [
@@ -26,9 +26,9 @@ ext {
             "retrofit-converter-gson": "com.squareup.retrofit2:converter-gson:${android["retrofitSdkVersion"]}",
             "retrofit-adapter-rxjava2": "com.squareup.retrofit2:adapter-rxjava2:${android["retrofitSdkVersion"]}",
             "converter-scalars"      : "com.squareup.retrofit2:converter-scalars:${android["retrofitSdkVersion"]}",
-            "rxlifecycle"            :'com.trello.rxlifecycle2:rxlifecycle:2.2.1',
-            "rxlifecycle-android"    :'com.trello.rxlifecycle2:rxlifecycle-android:2.2.1',
-            "rxlifecycle-components" :'com.trello.rxlifecycle2:rxlifecycle-components:2.2.1',
+            "rxlifecycle"            :'com.trello.rxlifecycle2:rxlifecycle:2.2.2',//基础库
+            "rxlifecycle-android"    :'com.trello.rxlifecycle2:rxlifecycle-android:2.2.2',//Android中使用的库，内部引用了基础库，如果使用此库则无需再引用基础库
+            "rxlifecycle-components" :'com.trello.rxlifecycle2:rxlifecycle-components:2.2.2',//Android组件库，里面定义了例如RxActivity、RxFragment等Android组件，内部引用了基础库和Android库，如果使用此库则无需再重复引用
             "okhttp3"                : "com.squareup.okhttp3:okhttp:3.14.2",
             "gson"                   : "com.google.code.gson:gson:2.8.2",
 
@@ -78,11 +78,11 @@ ext {
             "eventbus"               : 'org.greenrobot:eventbus:3.0.0',//事件总线
             //沉浸式状态栏
             // 基础依赖包，必须要依赖
-            "immersionbar"           : 'com.gyf.immersionbar:immersionbar:3.0.0-beta05',
+            "immersionbar"           : 'com.gyf.immersionbar:immersionbar:3.0.0',
             // fragment快速实现（可选）
-            "immersionbar-components": 'com.gyf.immersionbar:immersionbar-components:3.0.0-beta05',
+            "immersionbar-components": 'com.gyf.immersionbar:immersionbar-components:3.0.0',
             // kotlin扩展（可选）
-            "immersionbar-ktx"       : 'com.gyf.immersionbar:immersionbar-ktx:3.0.0-beta05',
+            "immersionbar-ktx"       : 'com.gyf.immersionbar:immersionbar-ktx:3.0.0',
             //数据库
             "greenDao"               : 'org.greenrobot:greendao:3.2.2',
             //展示大图+手势滑动

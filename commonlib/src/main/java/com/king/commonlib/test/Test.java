@@ -165,6 +165,9 @@ public class Test {
          * 可以用于
          */
         Observable.create((ObservableOnSubscribe<Integer>) emitter -> {
+            emitter.onNext(1);
+            emitter.onNext(2);
+            emitter.onNext(3);
         }).concatMap((Function<Integer, ObservableSource<String>>) integer -> {
             final List<String> list = new ArrayList<>();
             for (int i = 0; i < 3; i++) {
