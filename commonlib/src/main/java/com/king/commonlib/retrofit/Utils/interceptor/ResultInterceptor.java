@@ -24,6 +24,7 @@ public class ResultInterceptor implements Interceptor {
             try {
                 MediaType mediaType = response.body().contentType();
                 String string = response.body().string();//这是请求返回的数据
+                //如果返回的数据是加密的可以解密之后返回
                 ResponseBody responseBody = ResponseBody.create(mediaType,string);
                 return response.newBuilder().body(responseBody).build();
             } catch (Exception e) {

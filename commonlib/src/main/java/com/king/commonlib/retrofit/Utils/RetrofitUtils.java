@@ -128,7 +128,6 @@ public class RetrofitUtils {
                     .writeTimeout(Constans.DEFAULT_TIME,TimeUnit.SECONDS)//设置写入超时时间
                     //.addInterceptor(new AddHeadInterceptor())//添加请求头拦截器
                     .addInterceptor(interceptor)
-                    //.addInterceptor(new LogInterceptor())//添加打印拦截器
                     .retryOnConnectionFailure(true)//设置出现错误进行重新连接。
                     .build();
     }
