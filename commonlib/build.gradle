@@ -62,7 +62,8 @@ dependencies {
     api rootProject.ext.dependencies["constraint-layout"]
     api rootProject.ext.dependencies["test:runner"]
     api rootProject.ext.dependencies["espresso-core"]
-
+    api rootProject.ext.dependencies["annotations"]
+    api rootProject.ext.dependencies["core-ktx"]
     //Arouter路由
     api rootProject.ext.dependencies["arouter-api"]
     //跨组件通信
@@ -88,7 +89,6 @@ dependencies {
     //api rootProject.ext.dependencies["rxlifecycle"]
     //api rootProject.ext.dependencies["rxlifecycle-android"]
     api rootProject.ext.dependencies["rxlifecycle-components"]
-    api rootProject.ext.dependencies["annotations"]
 
     //dagger2相关
     api rootProject.ext.dependencies["dagger2"]
@@ -97,6 +97,7 @@ dependencies {
     //okhttp3
     api rootProject.ext.dependencies["okhttp3"]
     api rootProject.ext.dependencies["logger"]
+    //timber
     api rootProject.ext.dependencies["timber"]
 
     //图片加载

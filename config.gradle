@@ -1,115 +1,128 @@
 ext {
     //有重用的地方写在这里面，保证代码一致
-    android = [compileSdkVersion       : 29,
-               buildToolsVersion       : "29.0.3",
-               minSdkVersion           : 19,
-               targetSdkVersion        : 29,
-               versionCode             : 100,
-               versionName             : "1.0.0",
-               androidSupportSdkVersion: "29.0.3",
-               retrofitSdkVersion      : "2.6.0",
-               dagger2SdkVersion       : "2.23.2",
-               rxlifecycleSdkVersion   : "2.2.1",
-               espressoSdkVersion      : "2.2.2"
+    android = [compileSdkVersion : 29,
+               buildToolsVersion : "29.0.3",
+               minSdkVersion     : 19,
+               targetSdkVersion  : 29,
+               versionCode       : 100,
+               versionName       : "1.0.0",
+               retrofitSdkVersion: '2.7.1',
+               dagger2SdkVersion : '2.26',
+               lifecycleVersion  : "2.0.0"
     ]
     dependencies = [
-            "lombokJavax"            : "javax.annotation:javax.annotation-api:1.2",
-            "lombok"                 : "org.projectlombok:lombok:1.16.6",
-            "appcompat-v7"           : "com.android.support:appcompat-v7:${android["androidSupportSdkVersion"]}",
-            "design"                 : "com.android.support:design:${android["androidSupportSdkVersion"]}",
-            "support-v4"             : "com.android.support:support-v4:${android["androidSupportSdkVersion"]}",
-            "cardview-v7"            : "com.android.support:cardview-v7:${android["androidSupportSdkVersion"]}",
-            "annotations"            : "com.android.support:support-annotations:${android["androidSupportSdkVersion"]}",
-            "recyclerview-v7"        : "com.android.support:recyclerview-v7:${android["androidSupportSdkVersion"]}",
+            "lombokJavax"              : "javax.annotation:javax.annotation-api:1.3.2",
+            "lombok"                   : "org.projectlombok:lombok:1.18.12",
+            "appcompat-v7"             : "androidx.appcompat:appcompat:1.1.0",
+            "design"                   : "com.google.android.material:material:1.2.0-alpha05",
+            "support-v4"               : "androidx.legacy:legacy-support-v4:1.0.0",
+            "cardview-v7"              : "androidx.cardview:cardview:1.0.0",
+            "annotations"              : "androidx.annotation:annotation:1.1.0",
+            "recyclerview-v7"          : "androidx.recyclerview:recyclerview:1.1.0",
+            "core-ktx"                 : "androidx.core:core-ktx:1.2.0",
             //网络框架
-            "retrofit"               : "com.squareup.retrofit2:retrofit:${android["retrofitSdkVersion"]}",
-            "retrofit-converter-gson": "com.squareup.retrofit2:converter-gson:${android["retrofitSdkVersion"]}",
-            "retrofit-adapter-rxjava2": "com.squareup.retrofit2:adapter-rxjava2:${android["retrofitSdkVersion"]}",
-            "converter-scalars"      : "com.squareup.retrofit2:converter-scalars:${android["retrofitSdkVersion"]}",
-            "rxlifecycle"            :'com.trello.rxlifecycle2:rxlifecycle:2.2.2',//基础库
-            "rxlifecycle-android"    :'com.trello.rxlifecycle2:rxlifecycle-android:2.2.2',//Android中使用的库，内部引用了基础库，如果使用此库则无需再引用基础库
-            "rxlifecycle-components" :'com.trello.rxlifecycle2:rxlifecycle-components:2.2.2',//Android组件库，里面定义了例如RxActivity、RxFragment等Android组件，内部引用了基础库和Android库，如果使用此库则无需再重复引用
-            "okhttp3"                : "com.squareup.okhttp3:okhttp:3.14.2",
-            "gson"                   : "com.google.code.gson:gson:2.8.2",
+            "retrofit"                 : "com.squareup.retrofit2:retrofit:${android["retrofitSdkVersion"]}",
+            "retrofit-converter-gson"  : "com.squareup.retrofit2:converter-gson:${android["retrofitSdkVersion"]}",
+            "retrofit-adapter-rxjava2" : "com.squareup.retrofit2:adapter-rxjava2:${android["retrofitSdkVersion"]}",
+            "converter-scalars"        : "com.squareup.retrofit2:converter-scalars:${android["retrofitSdkVersion"]}",
+            "rxlifecycle"              : 'com.trello.rxlifecycle2:rxlifecycle:2.2.2',//基础库
+            "rxlifecycle-android"      : 'com.trello.rxlifecycle2:rxlifecycle-android:2.2.2',//Android中使用的库，内部引用了基础库，如果使用此库则无需再引用基础库
+            "rxlifecycle-components"   : 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.2',//Android组件库，里面定义了例如RxActivity、RxFragment等Android组件，内部引用了基础库和Android库，如果使用此库则无需再重复引用
+            "okhttp3"                  : "com.squareup.okhttp3:okhttp:3.14.2",
+            "gson"                     : "com.google.code.gson:gson:2.8.6",
 
             //dagger2
-            "dagger2"                : "com.google.dagger:dagger:${android["dagger2SdkVersion"]}",
-            "dagger2-apt-compiler"   : "com.google.dagger:dagger-compiler:${android["dagger2SdkVersion"]}",
-            "rxandroid"              : "io.reactivex.rxjava2:rxandroid:2.1.1",
-            "rxjava"                 : "io.reactivex.rxjava2:rxjava:2.2.10",
-            "autolayout"             : "com.zhy:autolayout:1.4.5",
-            "butterknife"            : "com.jakewharton:butterknife:10.1.0",
-            "butterknife-apt"        : "com.jakewharton:butterknife-compiler:10.1.0",
+            "dagger2"                  : "com.google.dagger:dagger:${android["dagger2SdkVersion"]}",
+            "dagger2-apt-compiler"     : "com.google.dagger:dagger-compiler:${android["dagger2SdkVersion"]}",
+            "rxandroid"                : "io.reactivex.rxjava2:rxandroid:2.1.1",
+            "rxjava"                   : "io.reactivex.rxjava2:rxjava:2.2.10",
+            "autolayout"               : "com.zhy:autolayout:1.4.5",
+            "butterknife"              : "com.jakewharton:butterknife:10.2.1",
+            "butterknife-apt"          : "com.jakewharton:butterknife-compiler:10.2.1",
 
-            "rxpermissions"          : "com.github.tbruyelle:rxpermissions:0.10.2",
+            "rxpermissions"            : "com.github.tbruyelle:rxpermissions:0.10.2",
             //图片处理框架
-            "glide"                  : "com.github.bumptech.glide:glide:4.9.0",
-            "glide_annotation"       : "com.github.bumptech.glide:compiler:4.9.0",
+            "glide"                    : "com.github.bumptech.glide:glide:4.11.0",
+            "glide_annotation"         : "com.github.bumptech.glide:compiler:4.11.0",
             //kotlin
-            "kotlin"                 : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            "kotlin"                   : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
             //test
-            "junit"                  : "junit:junit:4.12",
-            "androidJUnitRunner"     : "androidx.test.runner.AndroidJUnitRunner",
-            "timber"                 : "com.jakewharton.timber:timber:4.1.2",
-            "Android-AdvancedWebView": "com.github.delight-im:Android-AdvancedWebView:v3.0.0",//一个第三方webview
-            "banner"                 : 'com.youth.banner:banner:1.4.10',//banner图
-            "MagicIndicator"         : 'com.github.hackware1993:MagicIndicator:1.5.0',//一个tab导航栏
-            "logger"                 : 'com.squareup.okhttp3:logging-interceptor:3.14.2',//拦截器
+            "junit"                    : "junit:junit:4.13",
+            "androidJUnitRunner"       : "androidx.test.runner.AndroidJUnitRunner",
+            "timber"                   : "com.jakewharton.timber:timber:4.7.1",
+            "Android-AdvancedWebView"  : "com.github.delight-im:Android-AdvancedWebView:v3.0.0",//一个第三方webview
+            "banner"                   : 'com.youth.banner:banner:1.4.10',//banner图
+            "MagicIndicator"           : 'com.github.hackware1993:MagicIndicator:1.5.0',//一个tab导航栏
+            "logger"                   : 'com.squareup.okhttp3:logging-interceptor:3.14.2',//拦截器
 
-            "PersistentCookieJar"    : 'com.github.franmontiel:PersistentCookieJar:v1.0.1',//用于持久化cookie工具
-            "carrousellayout"        : 'com.dalong:carrousellayout:1.0.0',//类似旋转木马的效果图
-            "recyclercoverflow"      : 'com.chenlittleping:recyclercoverflow:1.0.5',//类似旋转木马的效果图的RV
-            "materialtabstrip"       : 'com.jpardogo.materialtabstrip:library:1.1.0',
-            "kenburnsview"           : 'com.flaviofaria:kenburnsview:1.0.7',//一个带动画效果的imageview?
-            "materialviewpager"      : 'com.github.florent37:materialviewpager:1.2.3',
-            "avi"                    : 'com.wang.avi:library:2.1.3',//一个酷炫的加载动画
-            "vcharts"                : 'com.vinctor:vcharts:1.0.0',//一个环形统计图
-            "material-calendarview"  : 'com.prolificinteractive:material-calendarview:1.4.3',//一个material design风格的日历控件
-            "commonrefreshlayout"    : 'com.mylhyl:commonrefreshlayout:2.4',//一个支持上拉加载更多的RecyclerView
-            "multidex"               : 'com.android.support:multidex:1.0.2',//解决兼容性问题
-            "arouter-api"            : 'com.alibaba:arouter-api:1.5.0',//ARouter api
-            "arouter-compiler"       : 'com.alibaba:arouter-compiler:1.2.2',//ARouter
-            "arouter_annotation"     : 'com.alibaba:arouter-annotation:1.0.4',
-            "constraint-layout"      : 'com.android.support.constraint:constraint-layout:1.1.3',//约束性布局
-            "test:runner"            : 'com.android.support.test:runner:1.0.2',//测试依赖，新建项目时会默认添加，一般不建议添加
-            "espresso-core"          : 'com.android.support.test.espresso:espresso-core:3.0.2',//测试依赖，新建项目时会默认添加，一般不建议添加
-            "brvah"                  : 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30',//一个牛逼的第三方adapter
-            "superAdapter"           : 'org.byteam.superadapter:superadapter:3.6.8', //万能Adapter
-            "eventbus"               : 'org.greenrobot:eventbus:3.0.0',//事件总线
+            "PersistentCookieJar"      : 'com.github.franmontiel:PersistentCookieJar:v1.0.1',//用于持久化cookie工具
+            "carrousellayout"          : 'com.dalong:carrousellayout:1.0.0',//类似旋转木马的效果图
+            "recyclercoverflow"        : 'com.chenlittleping:recyclercoverflow:1.0.5',//类似旋转木马的效果图的RV
+            "materialtabstrip"         : 'com.jpardogo.materialtabstrip:library:1.1.0',
+            "kenburnsview"             : 'com.flaviofaria:kenburnsview:1.0.7',//一个带动画效果的imageview?
+            "materialviewpager"        : 'com.github.florent37:materialviewpager:1.2.3',
+            "avi"                      : 'com.wang.avi:library:2.1.3',//一个酷炫的加载动画
+            "vcharts"                  : 'com.vinctor:vcharts:1.0.0',//一个环形统计图
+            "material-calendarview"    : 'com.prolificinteractive:material-calendarview:1.4.3',//一个material design风格的日历控件
+            "commonrefreshlayout"      : 'com.mylhyl:commonrefreshlayout:2.4',//一个支持上拉加载更多的RecyclerView
+            "multidex"                 : 'androidx.multidex:multidex:2.0.1',//解决兼容性问题
+            "arouter-api"              : 'com.alibaba:arouter-api:1.5.0',//ARouter api
+            "arouter-compiler"         : 'com.alibaba:arouter-compiler:1.2.2',//ARouter
+            "arouter_annotation"       : 'com.alibaba:arouter-annotation:1.0.4',
+            "constraint-layout"        : 'androidx.constraintlayout:constraintlayout:1.1.3',//约束性布局
+            "test:runner"              : 'androidx.test:runner:1.2.0',//测试依赖，新建项目时会默认添加，一般不建议添加
+            "espresso-core"            : 'androidx.test.espresso:espresso-core:3.2.0',//测试依赖，新建项目时会默认添加，一般不建议添加
+            "brvah"                    : 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30',//一个牛逼的第三方adapter
+            "superAdapter"             : 'org.byteam.superadapter:superadapter:3.6.8', //万能Adapter
+            "eventbus"                 : 'org.greenrobot:eventbus:3.0.0',//事件总线
             //沉浸式状态栏
             // 基础依赖包，必须要依赖
-            "immersionbar"           : 'com.gyf.immersionbar:immersionbar:3.0.0',
+            "immersionbar"             : 'com.gyf.immersionbar:immersionbar:3.0.0',
             // fragment快速实现（可选）
-            "immersionbar-components": 'com.gyf.immersionbar:immersionbar-components:3.0.0',
+            "immersionbar-components"  : 'com.gyf.immersionbar:immersionbar-components:3.0.0',
             // kotlin扩展（可选）
-            "immersionbar-ktx"       : 'com.gyf.immersionbar:immersionbar-ktx:3.0.0',
+            "immersionbar-ktx"         : 'com.gyf.immersionbar:immersionbar-ktx:3.0.0',
             //数据库
-            "greenDao"               : 'org.greenrobot:greendao:3.2.2',
+            "greenDao"                 : 'org.greenrobot:greendao:3.2.2',
             //展示大图+手势滑动
-            "scaleImageView"         : 'com.davemorrissey.labs:subsampling-scale-image-view:3.10.0',
-            "qrcode"                 : 'cn.bingoogolapple:bga-qrcode-zxing:1.3.6',//二维码
+            "scaleImageView"           : 'com.davemorrissey.labs:subsampling-scale-image-view:3.10.0',
+            "qrcode"                   : 'cn.bingoogolapple:bga-qrcode-zxing:1.3.6',//二维码
             //图片缩放
-            "photoview"              : "com.github.chrisbanes.photoview:library:1.2.4",
+            "photoview"                : "com.github.chrisbanes.photoview:library:1.2.4",
 
             //Bugly集成
-            "bugly"                          : "com.tencent.bugly:crashreport_upgrade:latest.release",
+            "bugly"                    : "com.tencent.bugly:crashreport_upgrade:latest.release",
             //仿ios进度条
-            "kprogresshud"                   : "com.kaopiz:kprogresshud:1.2.0",
+            "kprogresshud"             : "com.kaopiz:kprogresshud:1.2.0",
             // 仿ios弹出对话窗体
-            "alertview"                      : "com.bigkoo:alertview:1.0.3",
+            "alertview"                : "com.bigkoo:alertview:1.0.3",
             //安卓调试神器-Stetho
-            "stetho"                         : "com.facebook.stetho:stetho:1.5.0",
-            "stetho-okhttp3"                 : "com.facebook.stetho:stetho-okhttp3:1.5.0",
+            "stetho"                   : "com.facebook.stetho:stetho:1.5.1",
+            "stetho-okhttp3"           : "com.facebook.stetho:stetho-okhttp3:1.5.1",
             //垂直的tabLayout
-            "VerticalTabLayout"              : "q.rorbin:VerticalTabLayout:1.2.5",
+            "VerticalTabLayout"        : "q.rorbin:VerticalTabLayout:1.2.5",
             //水平tablayout
-            "FlycoTabLayout_Lib"             : "com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar",
+            "FlycoTabLayout_Lib"       : "com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar",
             //leakcanary内存泄露
-            "leakcanary-android"             : "com.squareup.leakcanary:leakcanary-android:1.5.4",
-            "leakcanary-android-no-op"       : "com.squareup.leakcanary:leakcanary-android-no-op:1.5.4",
-            "Luban"                          :'top.zibin:Luban:1.1.3',//图片压缩
-            "switchbutton"                   :'ch.ielse:switchbutton:1.0.1',//开关按钮
-            "fastjson"                       : "com.alibaba:fastjson:1.2.58",
-            "matisse"                        :'com.zhihu.android:matisse:0.5.2-beta5',//知乎图片选择
+            "leakcanary-android"       : "com.squareup.leakcanary:leakcanary-android:1.5.4",
+            "leakcanary-android-no-op" : "com.squareup.leakcanary:leakcanary-android-no-op:1.5.4",
+            "Luban"                    : 'top.zibin:Luban:1.1.3',//图片压缩
+            "switchbutton"             : 'ch.ielse:switchbutton:1.0.1',//开关按钮
+            "fastjson"                 : "com.alibaba:fastjson:1.2.62",
+            "matisse"                  : 'com.zhihu.android:matisse:0.5.2-beta5',//知乎图片选择
+
+            //lifecycle
+            // ViewModel and LiveData
+            "lifecycle-extensions"     : "androidx.lifecycle:lifecycle-extensions:${android["lifecycleVersion"]}",
+            //annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+            //For Kotlin use kapt instead of annotationProcessor
+            "lifecycle-compiler"       : "androidx.lifecycle:lifecycle-compiler:${android["lifecycleVersion"]}",
+            ////如果用的是java8使用以下的依赖
+            "lifecycle-common-java8"   : "androidx.lifecycle:lifecycle-common-java8:${android["lifecycleVersion"]}",
+            //LiveData 的 ReactiveStreams插件
+            "lifecycle-reactivestreams": "androidx.lifecycle:lifecycle-reactivestreams:${android["lifecycleVersion"]}",
+            //LiveData测试
+            //testImplementation "androidx.arch.core:core-testing:$lifecycle_version"
+            "lifecycle-core-testing"   : "androidx.arch.core:core-testing:${android["lifecycleVersion"]}",
     ]
 }
