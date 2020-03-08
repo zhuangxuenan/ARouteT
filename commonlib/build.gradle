@@ -88,7 +88,12 @@ dependencies {
 
     //api rootProject.ext.dependencies["rxlifecycle"]
     //api rootProject.ext.dependencies["rxlifecycle-android"]
-    api rootProject.ext.dependencies["rxlifecycle-components"]
+    //api rootProject.ext.dependencies["rxlifecycle-components"]
+
+    api rootProject.ext.dependencies["lifecycle-extensions"]
+    annotationProcessor rootProject.ext.dependencies["lifecycle-compiler"]
+    api rootProject.ext.dependencies["lifecycle-common-java8"]
+    api rootProject.ext.dependencies["lifecycle-core-testing"]
 
     //dagger2相关
     api rootProject.ext.dependencies["dagger2"]

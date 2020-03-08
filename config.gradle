@@ -25,6 +25,7 @@ ext {
             "retrofit-converter-gson"  : "com.squareup.retrofit2:converter-gson:${android["retrofitSdkVersion"]}",
             "retrofit-adapter-rxjava2" : "com.squareup.retrofit2:adapter-rxjava2:${android["retrofitSdkVersion"]}",
             "converter-scalars"        : "com.squareup.retrofit2:converter-scalars:${android["retrofitSdkVersion"]}",
+
             "rxlifecycle"              : 'com.trello.rxlifecycle2:rxlifecycle:2.2.2',//基础库
             "rxlifecycle-android"      : 'com.trello.rxlifecycle2:rxlifecycle-android:2.2.2',//Android中使用的库，内部引用了基础库，如果使用此库则无需再引用基础库
             "rxlifecycle-components"   : 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.2',//Android组件库，里面定义了例如RxActivity、RxFragment等Android组件，内部引用了基础库和Android库，如果使用此库则无需再重复引用
