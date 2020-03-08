@@ -25,6 +25,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 
 /**
+ * https://github.com/goldze/MVVMHabit
  * Created by goldze on 2017/6/15.
  * 一个拥有DataBinding框架的基Activity
  * 这里根据项目业务可以换成你自己熟悉的BaseActivity, 但是需要继承RxAppCompatActivity,方便LifecycleProvider管理生命周期
@@ -232,7 +233,6 @@ public abstract class BaseMvvmActivity<V extends ViewDataBinding, VM extends Bas
 
     /**
      * 初始化ViewModel
-     *
      * @return 继承BaseViewModel的ViewModel
      */
     public VM initViewModel() {
@@ -248,7 +248,6 @@ public abstract class BaseMvvmActivity<V extends ViewDataBinding, VM extends Bas
     }
     /**
      * 创建ViewModel
-     *
      * @param cls
      * @param <T>
      * @return
