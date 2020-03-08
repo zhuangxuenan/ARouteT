@@ -125,5 +125,16 @@ ext {
             //LiveData测试
             //testImplementation "androidx.arch.core:core-testing:$lifecycle_version"
             "lifecycle-core-testing"   : "androidx.arch.core:core-testing:${android["lifecycleVersion"]}",
+
+            "rxbinding"                : "com.jakewharton.rxbinding2:rxbinding:2.1.1",
+
+            //material-dialogs
+            //https://github.com/afollestad/material-dialogs
+            "material-dialogs-core"                : "com.afollestad.material-dialogs:core:3.3.0",
+
+            //recyclerview的databinding套装
+            //https://github.com/evant/binding-collection-adapter
+            "bindingcollectionadapter"             : "me.tatarka.bindingcollectionadapter2:bindingcollectionadapter:4.0.0",
+            "bindingcollectionadapter-recyclerview": "me.tatarka.bindingcollectionadapter2:bindingcollectionadapter-recyclerview:4.0.0",
     ]
 }

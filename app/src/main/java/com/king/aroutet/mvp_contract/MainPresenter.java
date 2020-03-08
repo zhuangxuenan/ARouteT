@@ -1,7 +1,6 @@
 package com.king.aroutet.mvp_contract;
 
 import com.king.commonlib.base.mvp.BasePresenter;
-
 /**
  * Describe：首页Presenter
  * Created by 眼光下的影子 on 2018/11/20.

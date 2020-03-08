@@ -30,6 +30,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    dataBinding {
+        enabled = true
+    }
     lintOptions {
         checkReleaseBuilds false
         // Or, if you prefer, you can continue to check for errors in release builds,
@@ -88,7 +91,7 @@ dependencies {
 
     //api rootProject.ext.dependencies["rxlifecycle"]
     //api rootProject.ext.dependencies["rxlifecycle-android"]
-    //api rootProject.ext.dependencies["rxlifecycle-components"]
+    api rootProject.ext.dependencies["rxlifecycle-components"]
 
     api rootProject.ext.dependencies["lifecycle-extensions"]
     annotationProcessor rootProject.ext.dependencies["lifecycle-compiler"]
@@ -178,4 +181,11 @@ dependencies {
     //访问相册
     api rootProject.ext.dependencies["matisse"]
     api files('libs/pinyin4j-2.5.0.jar')
+
+    api rootProject.ext.dependencies["rxbinding"]
+
+    api rootProject.ext.dependencies["material-dialogs-core"]
+
+    //api rootProject.ext.dependencies["bindingcollectionadapter"]
+    //api rootProject.ext.dependencies["bindingcollectionadapter-recyclerview"]
 }

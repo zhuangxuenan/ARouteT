@@ -38,7 +38,7 @@ import butterknife.Unbinder;
  * Describe：所有Activity的基类
  * Created by 阳光下的影子 on 2018/10/15.
  */
-
+//RxAppCompatActivity https://github.com/trello/RxLifecycle
 public abstract class BaseActivity extends RxAppCompatActivity implements IBaseActivity,View.OnClickListener {
     private Unbinder unbinder;
     protected Context mContext;
