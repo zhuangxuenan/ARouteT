@@ -29,7 +29,7 @@ import androidx.lifecycle.ViewModelProviders;
  * 一个拥有DataBinding框架的基Activity
  * 这里根据项目业务可以换成你自己熟悉的BaseActivity, 但是需要继承RxAppCompatActivity,方便LifecycleProvider管理生命周期
  */
-public abstract class MvvmBaseActivity<V extends ViewDataBinding, VM extends BaseViewModel> extends RxAppCompatActivity implements MBaseView {
+public abstract class BaseMvvmActivity<V extends ViewDataBinding, VM extends BaseViewModel> extends RxAppCompatActivity implements MBaseView {
     protected V binding;
     protected VM viewModel;
     private int viewModelId;

@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.WindowManager;
 
 import com.king.commonlib.R;
-import com.king.commonlib.base.MvvmBaseFragment;
+import com.king.commonlib.base.BaseMvvmFragment;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
 import java.lang.ref.WeakReference;
@@ -81,8 +81,8 @@ public class ContainerActivity extends RxAppCompatActivity {
     @Override
     public void onBackPressed() {
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.content);
-        if (fragment instanceof MvvmBaseFragment) {
-            if (!((MvvmBaseFragment) fragment).isBackPressed()) {
+        if (fragment instanceof BaseMvvmFragment) {
+            if (!((BaseMvvmFragment) fragment).isBackPressed()) {
                 super.onBackPressed();
             }
         } else {

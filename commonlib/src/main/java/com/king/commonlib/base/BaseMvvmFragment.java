@@ -29,7 +29,7 @@ import androidx.lifecycle.ViewModelProviders;
 /**
  * Created by goldze on 2017/6/15.
  */
-public abstract class MvvmBaseFragment<V extends ViewDataBinding, VM extends BaseViewModel> extends RxFragment implements MBaseView {
+public abstract class BaseMvvmFragment<V extends ViewDataBinding, VM extends BaseViewModel> extends RxFragment implements MBaseView {
     protected V binding;
     protected VM viewModel;
     private int viewModelId;
