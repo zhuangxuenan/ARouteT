@@ -186,6 +186,6 @@ dependencies {
 
     api rootProject.ext.dependencies["material-dialogs-core"]
 
-    //api rootProject.ext.dependencies["bindingcollectionadapter"]
-    //api rootProject.ext.dependencies["bindingcollectionadapter-recyclerview"]
+    api rootProject.ext.dependencies["bindingcollectionadapter"]
+    api rootProject.ext.dependencies["bindingcollectionadapter-recyclerview"]
 }
