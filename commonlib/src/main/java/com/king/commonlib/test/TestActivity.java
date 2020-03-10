@@ -1,51 +1,62 @@
 package com.king.commonlib.test;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.view.View;
+import android.text.Editable;
 
-import com.king.commonlib.base.BaseActivity;
+import com.king.commonlib.R;
+import com.king.commonlib.databinding.ActivityLivedataTestLayoutBinding;
+import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
-/***
- *项目名称：ARouteT
- *类描述:
- *创建人：Android
- *创建时间：2019/7/29 11:52
- *修改人：Android
+import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.ViewModelProviders;
+
+/**
+ * @ProjectName: ARouteT$
+ * @Package: com.king.commonlib.test$
+ * @ClassName: TestActivity$
+ * @Description: java类作用描述
+ * @Author: 庄学南
+ * @CreateDate: 2020/3/10$ 17:21$
+ * @UpdateUser: 更新者：
+ * @UpdateDate: 2020/3/10$ 17:21$
+ * @UpdateRemark: 更新说明：
  */
-public class TestActivity extends BaseActivity {
+public class TestActivity extends RxAppCompatActivity {
+    private EditViewModel mViewModel;
+    private ActivityLivedataTestLayoutBinding mBinding;
     @Override
-    protected void limitOnClick(View v) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_livedata_test_layout);
+        mViewModel = ViewModelProviders.of(this).get(EditViewModel.class);
+        mBinding.setEvm(mViewModel);
+        //mViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(BaseApplication.getslacker()).create(EditViewModel.class);
+        /* mBinding.et.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if(!TextUtils.isEmpty(s.toString().trim())){
+                    mViewModel.setValue(s.toString());
+                }
+            }
+        });*/
+        /*mViewModel.getValue().observe(this, s -> {
+            tv.setText(s);
+        });*/
     }
-
-    @Override
-    public int bindLayout() {
-        return 0;
-    }
-
-    @Override
-    public void initView(View view, Bundle savedInstanceState) {
-
-    }
-
-    @Override
-    public void doBusiness(Context mContext) {
-
-    }
-
-    @Override
-    public void resume() {
-
-    }
-
-    @Override
-    public void destroy() {
-
-    }
-
-    @Override
-    public void pause() {
-
+    public class JJ {
+        public void afterTextChanged(Editable s) {
+            mViewModel.setValue(s.toString());
+        }
     }
 }

@@ -1,0 +1,12 @@
+1.0liveData注解处理
+https://github.com/simplezhli/Saber
+2.0 rxjava管理
+https://github.com/trello/RxLifecycle
+3.0Mvvm
+https://github.com/goldze/MVVMHabit
+4.0 组件化路由
+https://github.com/alibaba/ARouter
+5.0LiveEventBus是一款Android消息总线，基于LiveData，具有生命周期感知能力，支持Sticky，支持AndroidX，支持跨进程，支持跨APP
+https://github.com/JeremyLiao/LiveEventBus
+6.0包含了 DataBinding 的大部分知识点
+https://github.com/leavesC/DataBindingSamples
