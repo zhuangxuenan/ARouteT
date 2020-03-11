@@ -1,5 +1,6 @@
 package com.king.commonlib.test;
 
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
@@ -16,7 +17,7 @@ import androidx.lifecycle.ViewModel;
  */
 public class EditViewModel extends ViewModel {
     private MutableLiveData<String> mValue;
-
+    private LiveData<String> mValue2;
     public MutableLiveData<String> getValue() {
         if (mValue == null) {
             mValue = new MutableLiveData<>();

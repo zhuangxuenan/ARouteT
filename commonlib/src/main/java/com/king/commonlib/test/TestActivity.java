@@ -9,6 +9,8 @@ import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModelProviders;
 
 /**
@@ -53,6 +55,11 @@ public class TestActivity extends RxAppCompatActivity {
         /*mViewModel.getValue().observe(this, s -> {
             tv.setText(s);
         });*/
+    }
+    private LiveData<String> getName(String num) {
+        MutableLiveData<String> liveData = new MutableLiveData<>();
+        liveData.setValue(num + "a");
+        return liveData;
     }
     public class JJ {
         public void afterTextChanged(Editable s) {
