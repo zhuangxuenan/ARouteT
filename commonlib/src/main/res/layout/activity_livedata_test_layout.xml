@@ -5,9 +5,13 @@
 
     <data>
         <import type="com.king.commonlib.test.EditViewModel"/>
+        <import type="com.king.commonlib.test.TestActivity.JJ"/>
         <variable
             name="evm"
             type="EditViewModel" />
+        <variable
+            name="jj"
+            type="JJ" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,7 +24,7 @@
             android:layout_height="wrap_content"
             android:textSize="25sp"
             android:hint="输入"
-            android:afterTextChanged="@{JJ.afterTextChanged}"
+            android:afterTextChanged="@{jj.afterTextChanged()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
