@@ -35,33 +35,12 @@ public class TestActivity extends RxAppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_livedata_test_layout);
+        //mViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(BaseApplication.getslacker()).create(EditViewModel.class);
         mViewModel = ViewModelProviders.of(this).get(EditViewModel.class);
         mBinding.setEvm(mViewModel);
         //让xml内绑定的LiveData和Observer建立连接，也正是因为这段代码，让LiveData能感知Activity的生命周期
         //https://www.jianshu.com/p/7f77cfc43313
         mBinding.setLifecycleOwner(this);
-        //mViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(BaseApplication.getslacker()).create(EditViewModel.class);
-        /* mBinding.et.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                if(!TextUtils.isEmpty(s.toString().trim())){
-                    mViewModel.setValue(s.toString());
-                }
-            }
-        });*/
-        /*mViewModel.getValue().observe(this, s -> {
-            tv.setText(s);
-        });*/
     }
     private LiveData<String> getName(String num) {
         MutableLiveData<String> liveData = new MutableLiveData<>();
