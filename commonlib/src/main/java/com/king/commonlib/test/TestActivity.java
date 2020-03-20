@@ -7,6 +7,10 @@ import com.king.commonlib.R;
 import com.king.commonlib.databinding.ActivityLivedataTestLayoutBinding;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.LiveData;
@@ -33,6 +37,9 @@ public class TestActivity extends RxAppCompatActivity {
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_livedata_test_layout);
         mViewModel = ViewModelProviders.of(this).get(EditViewModel.class);
         mBinding.setEvm(mViewModel);
+        //让xml内绑定的LiveData和Observer建立连接，也正是因为这段代码，让LiveData能感知Activity的生命周期
+        //https://www.jianshu.com/p/7f77cfc43313
+        mBinding.setLifecycleOwner(this);
         //mViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(BaseApplication.getslacker()).create(EditViewModel.class);
         /* mBinding.et.addTextChangedListener(new TextWatcher() {
             @Override
