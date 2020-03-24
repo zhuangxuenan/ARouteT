@@ -50,6 +50,7 @@ public class TestActivity extends RxAppCompatActivity {
     public class JJ {
         public void afterTextChanged(Editable s) {
             mViewModel.setValue(s.toString());
+            mBinding.setEvm(mViewModel);
         }
     }
 }
