@@ -75,7 +75,7 @@ ext {
             "espresso-core"            : 'androidx.test.espresso:espresso-core:3.2.0',//测试依赖，新建项目时会默认添加，一般不建议添加
             "brvah"                    : 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30',//一个牛逼的第三方adapter
             "superAdapter"             : 'org.byteam.superadapter:superadapter:3.6.8', //万能Adapter
-            "eventbus"                 : 'org.greenrobot:eventbus:3.0.0',//事件总线
+            "eventbus"                 : 'com.jeremyliao:live-event-bus-x:1.5.7',//事件总线
             //沉浸式状态栏
             // 基础依赖包，必须要依赖
             "immersionbar"             : 'com.gyf.immersionbar:immersionbar:3.0.0',

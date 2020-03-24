@@ -12,18 +12,14 @@ import android.view.inputmethod.InputMethodManager;
 import com.gyf.immersionbar.ImmersionBar;
 import com.kaopiz.kprogresshud.KProgressHUD;
 import com.king.commonlib.R;
-import com.king.commonlib.bean.Event;
 import com.king.commonlib.listener.IBaseActivity;
 import com.king.commonlib.listener.IMemoryState;
 import com.king.commonlib.manage.ActivityManage;
 import com.king.commonlib.utils.AppLogMessageMgr;
-import com.king.commonlib.utils.EventBusUtils;
 import com.king.commonlib.utils.NetworkUtil;
 import com.king.commonlib.utils.PxUtils;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.Arrays;
 import java.util.Calendar;
@@ -60,9 +56,6 @@ public abstract class BaseActivity extends RxAppCompatActivity implements IBaseA
         //沉浸式状态栏
         initImmersionBar(R.color.blue);
         ActivityManage.getslacker().addActivity(this);
-        if (regEvent()) {
-            EventBusUtils.register(this);
-        }
         hud = KProgressHUD.create(this)
                 .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
                 //.setLabel("Please wait")
@@ -116,9 +109,6 @@ public abstract class BaseActivity extends RxAppCompatActivity implements IBaseA
             unbinder.unbind();
         }
         destroy();
-        if (regEvent()) {
-            EventBusUtils.unregister(this);
-        }
         if(null!=hud){
             if(hud.isShowing()){
                 hud.dismiss();
@@ -152,19 +142,6 @@ public abstract class BaseActivity extends RxAppCompatActivity implements IBaseA
             }
         }
         return true;
-    }
-    /**
-     * 子类接受事件 重写该方法
-     */
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onEventBus(Event event) {
-
-    }
-    /**
-     * 需要接收事件 重写该方法 并返回true
-     */
-    protected boolean regEvent() {
-        return false;
     }
     @Override
     protected void onPause() {
@@ -212,4 +189,5 @@ public abstract class BaseActivity extends RxAppCompatActivity implements IBaseA
     public void setMemoryListener(IMemoryState iMemoryState) {
         mIMemoryState = iMemoryState;
     }
+
 }

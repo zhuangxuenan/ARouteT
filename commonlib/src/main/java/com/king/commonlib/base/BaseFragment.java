@@ -8,17 +8,12 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 
 import com.king.commonlib.R;
-import com.king.commonlib.bean.Event;
 import com.king.commonlib.dialog.LoadingDialog;
 import com.king.commonlib.listener.IBaseFragment;
 import com.king.commonlib.listener.IMemoryState;
 import com.king.commonlib.utils.AppLogMessageMgr;
 import com.king.commonlib.utils.NetworkUtil;
 import com.trello.rxlifecycle2.components.support.RxFragment;
-
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
 
 import java.lang.reflect.Field;
 import java.util.Calendar;
@@ -90,9 +85,6 @@ public abstract class BaseFragment extends RxFragment implements IBaseFragment,I
         rootView = inflater.inflate(R.layout.fragment_base, container, false);
         ((ViewGroup) rootView.findViewById(R.id.fl_content)).addView(getLayoutInflater().inflate(bindLayout(), null));
         unBinder = ButterKnife.bind(this, rootView);
-        if (regEvent()) {
-            EventBus.getDefault().register(this);
-        }
         return rootView;
     }
 
@@ -153,22 +145,6 @@ public abstract class BaseFragment extends RxFragment implements IBaseFragment,I
         if (unBinder != null) {
             unBinder.unbind();
         }
-        if (regEvent()) {
-            EventBus.getDefault().unregister(this);
-        }
-    }
-    /**
-     * 子类接受事件 重写该方法
-     */
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onEventBus(Event event) {
-    }
-
-    /**
-     * 需要接收事件 重新该方法 并返回true
-     */
-    protected boolean regEvent() {
-        return false;
     }
     //    强制隐藏输入法
     protected void hideSoftInput() {

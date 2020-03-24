@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.jeremyliao.liveeventbus.LiveEventBus;
 import com.king.commonlib.BuildConfig;
 import com.king.commonlib.manage.ActivityManage;
 import com.king.commonlib.manage.CrashHandlerManage;
@@ -42,6 +43,11 @@ public class BaseApplication extends Application {
         super.onCreate();
         initARouter();
         initCrashManage();
+        //https://github.com/JeremyLiao/LiveEventBus
+        LiveEventBus.config()
+                .supportBroadcast(application)
+                .lifecycleObserverAlwaysActive(false)
+                .autoClear(true);
     }
     /**
      * 初始化崩溃管理器
