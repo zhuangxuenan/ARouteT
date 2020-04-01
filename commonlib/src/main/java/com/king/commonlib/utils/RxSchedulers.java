@@ -21,14 +21,9 @@ import io.reactivex.schedulers.Schedulers;
  * @Version: 1.0
  */
 public class RxSchedulers {
-    static final ObservableTransformer schedulersTransformer = new ObservableTransformer() {
-        @Override
-        public ObservableSource apply(Observable upstream) {
-            return (upstream)
-                    .subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread());
-        }
-    };
+    static final ObservableTransformer schedulersTransformer = upstream -> (upstream)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread());
     public static <T> ObservableTransformer<T, T> applySchedulers() {
         return (ObservableTransformer<T, T>) schedulersTransformer;
     }

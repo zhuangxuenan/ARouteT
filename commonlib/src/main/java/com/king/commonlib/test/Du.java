@@ -25,4 +25,7 @@ public class Du {
         }
         System.out.println("回归:" + temp);
     }
+    public void shout(){
+        System.out.println("I'm shouting");
+    }
 }
